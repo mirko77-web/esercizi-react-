@@ -1,4 +1,4 @@
-import { useState } from 'react';
+/* import { useState } from 'react';
 import React from 'react';
 
 const App = () => {
@@ -14,4 +14,28 @@ const App = () => {
 }
 
 
-export default App
+export default App */
+
+//esercizio 3//
+
+import { useState } from 'react';
+import React from 'react';
+
+const App = () => {
+  const [counter, setCounter] = useState(0); 
+
+  const handleClickButton = () => {
+    setCounter((_counter) => _counter + 1); 
+  };
+
+  return (
+    <div>
+      <button onClick={handleClickButton}>Incrementa</button>
+      <p>
+        Counter: {counter} 
+      </p>
+    </div>
+  );
+};
+
+export default App;
