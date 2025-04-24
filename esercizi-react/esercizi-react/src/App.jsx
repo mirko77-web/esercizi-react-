@@ -69,7 +69,7 @@ const App = () => {
   );
 };
 
-export default App;*/
+export default App;
 
 //esercizio 5//
 
@@ -97,3 +97,59 @@ const TextInput = () => {
 };
 
 export default TextInput;
+
+*/
+
+//esercizio 6 //
+
+import { useState } from 'react';
+import React from 'react';
+
+const LoginForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value); 
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
+    console.log(`Username: ${username}, Password: ${password}`); 
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>
+          Username:
+          <input 
+            type="text" 
+            value={username} 
+            onChange={handleUsernameChange} 
+            placeholder="Inserisci il tuo username" 
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Password:
+          <input 
+            type="password" 
+            value={password} 
+            onChange={handlePasswordChange} 
+            placeholder="Inserisci la tua password" 
+          />
+        </label>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  );
+};
+
+export default LoginForm;
+
