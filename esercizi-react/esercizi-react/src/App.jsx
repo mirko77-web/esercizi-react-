@@ -39,7 +39,7 @@ const App = () => {
 };
 
 export default App;
-*/
+
 
 //esercizio 4//
 
@@ -69,4 +69,31 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;*/
+
+//esercizio 5//
+
+import { useState } from 'react';
+import React from 'react';
+
+const TextInput = () => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value); 
+  };
+
+  return (
+    <div>
+      <input 
+        type="text" 
+        value={inputValue} 
+        onChange={handleInputChange} 
+        placeholder="Scrivi qualcosa..."
+      />
+      <p>Valore dell'input: {inputValue}</p>
+    </div>
+  );
+};
+
+export default TextInput;
