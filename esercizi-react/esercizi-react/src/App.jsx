@@ -98,7 +98,6 @@ const TextInput = () => {
 
 export default TextInput;
 
-*/
 
 //esercizio 6 //
 
@@ -152,4 +151,36 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+*/
 
+import { useState } from 'react';
+import React from 'react';
+
+const App = () => {
+  const [counter, setCounter] = useState(0); 
+
+  const handleClickButton = () => {
+    setCounter((_counter) => _counter + 1); 
+  };
+
+  const LessClickButton = () => {
+    setCounter((_counter) => _counter - 1); 
+  };
+
+  const ResetClickButton = () => {
+    setCounter(0); 
+  };
+
+  return (
+    <div>
+      <button onClick={handleClickButton}>Incrementa</button>
+      <button onClick={LessClickButton}>Decrementa</button>
+      <button onClick={ResetClickButton}>Reset</button>
+      <p>
+        Counter: {counter}
+      </p>
+    </div>
+  );
+};
+
+export default App;
