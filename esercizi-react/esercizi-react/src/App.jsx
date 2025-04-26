@@ -223,7 +223,7 @@ const App = () => {
 };
 
 export default App;
-*/
+
 
 
 //esercizio 9//
@@ -278,3 +278,25 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+*/
+
+//esercizio 10 //
+
+import React, { useRef } from 'react';
+
+const UncontrolledInput = () => {
+  const inputRef = useRef(); 
+
+  const handleSubmit = () => {
+    alert(`Valore dell'input: ${inputRef.current.value}`); 
+  };
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} placeholder="Inserisci qualcosa..." />
+      <button onClick={handleSubmit}>Mostra Valore</button>
+    </div>
+  );
+};
+
+export default UncontrolledInput;
