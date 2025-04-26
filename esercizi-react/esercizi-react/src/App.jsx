@@ -184,7 +184,6 @@ const App = () => {
 };
 
 export default App;
-*/
 
 
  //esercizio useEffect
@@ -224,3 +223,58 @@ const App = () => {
 };
 
 export default App;
+*/
+
+
+//esercizio 9//
+
+import React, { useState } from 'react';
+
+const LoginForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value); 
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value); 
+  };
+
+  const handleSubmit = () => {
+    alert(`Username: ${username}\nPassword: ${password}`);
+  };
+
+  return (
+    <div>
+      <form>
+        <div>
+          <label>
+            Username:
+            <input 
+              type="text" 
+              value={username} 
+              onChange={handleUsernameChange} 
+              placeholder="Inserisci il tuo username" 
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Password:
+            <input 
+              type="password" 
+              value={password} 
+              onChange={handlePasswordChange} 
+              placeholder="Inserisci la tua password" 
+            />
+          </label>
+        </div>
+        <button type="button" onClick={handleSubmit}>Submit</button> 
+      </form>
+    </div>
+  );
+};
+
+export default LoginForm;
