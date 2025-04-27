@@ -300,7 +300,7 @@ const UncontrolledInput = () => {
 };
 
 export default UncontrolledInput;
-*/
+
 
 //esercizio 11//
 
@@ -328,3 +328,30 @@ const UncontrolledInput = () => {
 };
 
 export default UncontrolledInput;
+*/
+
+//esercizio 12//
+
+import React, { useRef } from 'react';
+
+const UncontrolledInput = () => {
+  const inputRef = useRef(); 
+
+  const handleButtonClick = () => {
+    alert(`Valore corrente dell'input: ${inputRef.current.value}`); 
+  };
+
+  return (
+    <div>
+      <input 
+        type="text" 
+        ref={inputRef}
+        placeholder="Scrivi qui..."
+      />
+      <button onClick={handleButtonClick}>Mostra Valore</button> 
+    </div>
+  );
+};
+
+export default UncontrolledInput;
+
