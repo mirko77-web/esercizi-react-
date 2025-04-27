@@ -328,7 +328,7 @@ const UncontrolledInput = () => {
 };
 
 export default UncontrolledInput;
-*/
+
 
 //esercizio 12//
 
@@ -355,3 +355,20 @@ const UncontrolledInput = () => {
 
 export default UncontrolledInput;
 
+*/
+
+//ersercizio 13//
+
+import React from 'react';
+
+const ItemList = ({ items }) => {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+};
+
+export default ItemList;
