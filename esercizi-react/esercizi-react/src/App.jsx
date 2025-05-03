@@ -372,7 +372,10 @@ const ItemList = ({ items }) => {
 };
 
 export default ItemList;
-*/
+
+
+
+//esercizio 14//
 import React from 'react';
 import ItemList from './Components/ItemList';
 
@@ -391,3 +394,21 @@ const MainComponents = () => {
 };
 
 export default MainComponents;
+*/
+
+//esercizio 15//
+import React from 'react';
+import Card from './Card';
+
+const App = () => {
+  return (
+    <div className="flex flex-col items-center p-6">
+      <Card>
+        <h2 className="text-xl font-bold">Titolo della Card</h2>
+        <p className="text-gray-700">Questo è il contenuto della card.</p>
+      </Card>
+    </div>
+  );
+};
+
+export default App;
