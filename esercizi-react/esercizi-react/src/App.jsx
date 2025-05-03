@@ -394,7 +394,7 @@ const MainComponents = () => {
 };
 
 export default MainComponents;
-*/
+
 
 //esercizio 15//
 import React from 'react';
@@ -406,6 +406,36 @@ const App = () => {
       <Card>
         <h2 className="text-xl font-bold">Titolo della Card</h2>
         <p className="text-gray-700">Questo è il contenuto della card.</p>
+      </Card>
+    </div>
+  );
+};
+
+export default App;
+*/
+
+
+//esercizio 16//
+
+import React from 'react';
+import Card from './Card';
+
+const App = () => {
+  return (
+    <div className="flex flex-col items-center p-6 space-y-4">
+      <Card>
+        <h2 className="text-xl font-bold">Benvenuto!</h2>
+        <p className="text-gray-700">Questa è una card con del testo.</p>
+      </Card>
+
+      <Card>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
+          Clicca qui
+        </button>
+      </Card>
+
+      <Card>
+        <img src="https://via.placeholder.com/150" alt="Immagine di esempio" className="rounded-lg"/>
       </Card>
     </div>
   );
