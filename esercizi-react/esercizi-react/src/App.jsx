@@ -355,7 +355,7 @@ const UncontrolledInput = () => {
 
 export default UncontrolledInput;
 
-*/
+
 
 //ersercizio 13//
 
@@ -372,3 +372,22 @@ const ItemList = ({ items }) => {
 };
 
 export default ItemList;
+*/
+import React from 'react';
+import ItemList from './Components/ItemList';
+
+
+
+
+const MainComponents = () => {
+  const items = ['Elemento 1', 'Elemento 2', 'Elemento 3'];
+
+  return (
+    <div>
+      <h2>Lista di elementi</h2>
+      <ItemList items={items} />
+    </div>
+  );
+};
+
+export default MainComponents;
