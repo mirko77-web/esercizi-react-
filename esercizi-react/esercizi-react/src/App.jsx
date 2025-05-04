@@ -412,7 +412,6 @@ const App = () => {
 };
 
 export default App;
-*/
 
 
 //esercizio 16//
@@ -437,6 +436,37 @@ const App = () => {
       <Card>
         <img src="https://via.placeholder.com/150" alt="Immagine di esempio" className="rounded-lg"/>
       </Card>
+    </div>
+  );
+};
+
+export default App;
+
+//esercizio 17//
+
+import React from "react";
+import MyComponent from "./Component"; 
+
+const App = () => {
+  return (
+    <div>
+      <h1>Benvenuto!</h1>
+      <MyComponent />
+    </div>
+  );
+};
+
+export default App;
+*/
+
+//esercizio 17//
+import DataDisplay from "./components/DataDisplay";
+
+const App = () => {
+  return (
+    <div>
+      <h1>Recupero dati con useFetch</h1>
+      <DataDisplay />
     </div>
   );
 };
