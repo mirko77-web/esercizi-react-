@@ -457,7 +457,7 @@ const App = () => {
 };
 
 export default App;
-*/
+
 
 //esercizio 17//
 import DataDisplay from "./components/DataDisplay";
@@ -467,6 +467,22 @@ const App = () => {
     <div>
       <h1>Recupero dati con useFetch</h1>
       <DataDisplay />
+    </div>
+  );
+};
+
+export default App;
+*/
+
+//esercizio 18//
+
+import TodoList from "./components/TodoList";
+
+const App = () => {
+  return (
+    <div>
+      <h1>Recupero dati con useFetch</h1>
+      <TodoList />
     </div>
   );
 };
