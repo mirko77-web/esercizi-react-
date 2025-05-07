@@ -472,7 +472,7 @@ const App = () => {
 };
 
 export default App;
-*/
+
 
 //esercizio 18//
 
@@ -482,6 +482,20 @@ const App = () => {
   return (
     <div>
       <h1>Recupero dati con useFetch</h1>
+      <TodoList />
+    </div>
+  );
+};
+
+export default App;
+*/
+//esercizio 19//
+import TodoList from "./Components/TodoList";
+
+const App = () => {
+  return (
+    <div>
+      <h1>Gestione To-Do</h1>
       <TodoList />
     </div>
   );
