@@ -488,7 +488,7 @@ const App = () => {
 };
 
 export default App;
-*/
+
 //esercizio 19//
 import TodoList from "./Components/TodoList";
 
@@ -502,3 +502,25 @@ const App = () => {
 };
 
 export default App;
+*/
+//esercizio 21//
+
+import React, { useRef, useEffect } from 'react';
+
+function SearchInput() {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  return (
+    <input
+      type="text"
+      placeholder="Cerca..."
+      ref={inputRef}
+    />
+  );
+}
+
+export default SearchInput;
