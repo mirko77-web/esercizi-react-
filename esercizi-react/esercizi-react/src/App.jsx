@@ -539,7 +539,6 @@ function App() {
 }
 
 export default App;
-*/
 
 //esercizio 24//
 
@@ -556,3 +555,6 @@ function App() {
 }
 
 export default App;
+*/
+//esercizio 25//
+
