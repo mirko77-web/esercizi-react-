@@ -63,7 +63,7 @@ const TodoList = () => {
 };
 
 export default TodoList;
-*/
+
 
 import { useState, useCallback } from "react";
 import useFetch from "../Hooks/UseFetch";
@@ -97,5 +97,31 @@ const TodoList = () => {
     </div>
   );
 };
+
+export default TodoList;
+*/
+
+import React from 'react';
+import { useTodos } from '../contexts/TodoContext';
+
+function TodoList() {
+  const { todos, setTodos } = useTodos();
+
+  
+  const addTodo = () => {
+    setTodos([...todos, { id: Date.now(), text: 'Nuovo ToDo' }]);
+  };
+
+  return (
+    <div>
+      <button onClick={addTodo}>Aggiungi ToDo</button>
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default TodoList;

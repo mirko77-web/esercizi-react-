@@ -502,7 +502,7 @@ const App = () => {
 };
 
 export default App;
-*/
+
 //esercizio 21//
 
 import React, { useRef, useEffect } from 'react';
@@ -523,4 +523,19 @@ function SearchInput() {
   );
 }
 
-export default SearchInput;
+export default SearchInput;*/
+
+//esercizio 23//
+import React from 'react';
+import { TodoProvider } from './contexts/TodoContext';
+import TodoList from './components/TodoList';
+
+function App() {
+  return (
+    <TodoProvider>
+      <TodoList />
+    </TodoProvider>
+  );
+}
+
+export default App;
