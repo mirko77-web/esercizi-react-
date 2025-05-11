@@ -4,7 +4,7 @@ function About() {
   return (
     <div>
       <h1>About</h1>
-      <p>Questa è un'applicazione per gestire la lista dei to-do.</p>
+      <p>ciao a tutti</p>
     </div>
   );
 }
