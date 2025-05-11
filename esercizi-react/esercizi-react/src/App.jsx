@@ -523,12 +523,29 @@ function SearchInput() {
   );
 }
 
-export default SearchInput;*/
+export default SearchInput;
 
 //esercizio 23//
 import React from 'react';
 import { TodoProvider } from './contexts/TodoContext';
 import TodoList from './components/TodoList';
+
+function App() {
+  return (
+    <TodoProvider>
+      <TodoList />
+    </TodoProvider>
+  );
+}
+
+export default App;
+*/
+
+//esercizio 24//
+
+import React from 'react';
+import { TodoProvider } from './TodoContext';
+import TodoList from './TodoList';
 
 function App() {
   return (

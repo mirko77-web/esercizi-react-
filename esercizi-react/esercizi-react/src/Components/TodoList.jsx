@@ -99,7 +99,7 @@ const TodoList = () => {
 };
 
 export default TodoList;
-*/
+
 
 import React from 'react';
 import { useTodos } from '../contexts/TodoContext';
@@ -123,5 +123,43 @@ function TodoList() {
     </div>
   );
 }
+
+export default TodoList;
+*/
+import React, { useContext, useState } from 'react';
+import { TodoContext  } from "./TodoList";
+
+const TodoList = () => {
+  const { todos, addTodo, removeTodo } = useContext(TodoContext);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleAddTodo = () => {
+    if (inputValue.trim()) {
+      addTodo(inputValue.trim());
+      setInputValue('');
+    }
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Aggiungi un nuovo to-do"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button onClick={handleAddTodo}>Aggiungi</button>
+
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <button onClick={() => removeTodo(index)}>Rimuovi</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default TodoList;
