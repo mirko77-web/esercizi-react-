@@ -1,20 +1,45 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div>
-      {/* Qui puoi mettere navbar, sidebar, header, footer, ecc. */}
-      <header className="bg-gray-800 text-white p-4">
-        <h1 className="text-xl font-bold">La Mia App</h1>
-      </header>
+    <div className="min-h-screen flex flex-col">
+      {/* Barra di navigazione */}
+      <nav className="bg-gray-800 text-white p-4 flex gap-6">
+        <NavLink 
+          to="/" 
+          end
+          className={({ isActive }) =>
+            isActive ? "underline font-bold" : "hover:underline"
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink 
+          to="/signup" 
+          className={({ isActive }) =>
+            isActive ? "underline font-bold" : "hover:underline"
+          }
+        >
+          Signup
+        </NavLink>
+        <NavLink 
+          to="/private/menubusiness" 
+          className={({ isActive }) =>
+            isActive ? "underline font-bold" : "hover:underline"
+          }
+        >
+          Menu Business
+        </NavLink>
+      </nav>
 
-      {/* Contenuto dinamico delle pagine */}
-      <main className="p-6">
+      {/* Contenuto principale */}
+      <main className="flex-grow p-6 bg-gray-50">
         <Outlet />
       </main>
 
-      <footer className="bg-gray-200 text-center p-4 mt-10">
+      {/* Footer (opzionale) */}
+      <footer className="bg-gray-800 text-white text-center p-4">
         © 2025 La Mia Azienda
       </footer>
     </div>
