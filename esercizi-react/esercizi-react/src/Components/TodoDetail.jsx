@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+
 const todos = [
   { id: 1, title: 'Fare la spesa', description: 'Comprare latte e pane' },
   { id: 2, title: 'Pulire casa', description: 'Passare lo straccio ' },
@@ -6,9 +7,7 @@ const todos = [
 ];
 
 function TodoDetail() {
- 
-  const { id } = useParams();
-
+  const { id } = useParams(); 
   const todo = todos.find(t => t.id === parseInt(id));
 
   if (!todo) {

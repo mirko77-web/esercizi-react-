@@ -13,8 +13,9 @@ function TodoList() {
       <ul>
         {todos.map(todo => (
           <li key={todo.id}>
-            
-            <Link to={`/todo/${todo.id}`}>{todo.title}</Link>
+            <Link to={`/todo/${todo.id}`}>
+              {todo.title}
+            </Link>
           </li>
         ))}
       </ul>
