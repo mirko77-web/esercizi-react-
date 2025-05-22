@@ -62,7 +62,7 @@ function TodoList() {
   );
 }
 
-export default TodoList; */
+export default TodoList; 
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -98,3 +98,58 @@ export default function TodoList() {
   );
 }
 
+*/
+
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTodo, toggleTodo, removeTodo } from '../features/todos/todosSlice';
+
+export default function TodoList() {
+  // Recupera la lista dei to-do dallo store Redux
+  const todos = useSelector((state) => state.todos.todos);
+  
+  // Ottieni la funzione dispatch per inviare azioni
+  const dispatch = useDispatch();
+  
+  // Stato locale per l’input del nuovo to-do
+  const [input, setInput] = useState('');
+
+  // Funzione per aggiungere un nuovo to-do
+  const handleAdd = () => {
+    if (input.trim() !== '') {
+      dispatch(addTodo(input.trim()));
+      setInput('');
+    }
+  };
+
+  return (
+    <div>
+      <h2>Lista To-Do</h2>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Scrivi un nuovo to-do"
+      />
+      <button onClick={handleAdd}>Aggiungi</button>
+
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id} style={{ margin: '8px 0' }}>
+            <span
+              onClick={() => dispatch(toggleTodo(todo.id))}
+              style={{
+                cursor: 'pointer',
+                textDecoration: todo.completed ? 'line-through' : 'none',
+                marginRight: '10px',
+              }}
+            >
+              {todo.text}
+            </span>
+            <button onClick={() => dispatch(removeTodo(todo.id))}>Elimina</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
