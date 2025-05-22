@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+/*import { Link } from 'react-router-dom';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -62,4 +62,39 @@ function TodoList() {
   );
 }
 
-export default TodoList;
+export default TodoList; */
+
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTodo, toggleTodo, removeTodo } from '../features/todos/todosSlice';
+
+export default function TodoList() {
+  const todos = useSelector(state => state.todos.todos);
+  const dispatch = useDispatch();
+  const [input, setInput] = useState('');
+
+  const handleAdd = () => {
+    if (input.trim()) {
+      dispatch(addTodo(input));
+      setInput('');
+    }
+  };
+
+  return (
+    <div>
+      <input value={input} onChange={e => setInput(e.target.value)} placeholder="Nuovo to-do" />
+      <button onClick={handleAdd}>Aggiungi</button>
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+            <span onClick={() => dispatch(toggleTodo(todo.id))} style={{ cursor: 'pointer' }}>
+              {todo.text}
+            </span>
+            <button onClick={() => dispatch(removeTodo(todo.id))}>X</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
