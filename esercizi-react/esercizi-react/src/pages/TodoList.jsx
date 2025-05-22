@@ -98,7 +98,7 @@ export default function TodoList() {
   );
 }
 
-*/
+
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -135,6 +135,53 @@ export default function TodoList() {
 
       <ul>
         {todos.map((todo) => (
+          <li key={todo.id} style={{ margin: '8px 0' }}>
+            <span
+              onClick={() => dispatch(toggleTodo(todo.id))}
+              style={{
+                cursor: 'pointer',
+                textDecoration: todo.completed ? 'line-through' : 'none',
+                marginRight: '10px',
+              }}
+            >
+              {todo.text}
+            </span>
+            <button onClick={() => dispatch(removeTodo(todo.id))}>Elimina</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+*/
+
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTodo, toggleTodo, removeTodo } from '../features/todos/todosSlice';
+
+export default function TodoList() {
+  const todos = useSelector(state => state.todos.todos);
+  const dispatch = useDispatch();
+  const [input, setInput] = useState('');
+
+  const handleAdd = () => {
+    if (input.trim()) {
+      dispatch(addTodo(input.trim()));
+      setInput('');
+    }
+  };
+
+  return (
+    <div>
+      <input
+        value={input}
+        onChange={e => setInput(e.target.value)}
+        placeholder="Nuovo to-do"
+      />
+      <button onClick={handleAdd}>Aggiungi</button>
+
+      <ul>
+        {todos.map(todo => (
           <li key={todo.id} style={{ margin: '8px 0' }}>
             <span
               onClick={() => dispatch(toggleTodo(todo.id))}
