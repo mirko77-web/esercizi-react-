@@ -14,3 +14,12 @@ export interface User {
   name: string;
   email?: string; 
 }
+
+//esercizio 7 
+
+export interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+  userId?: number;  
+}
