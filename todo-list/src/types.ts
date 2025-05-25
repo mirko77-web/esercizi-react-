@@ -23,3 +23,13 @@ export interface Todo {
   completed: boolean;
   userId?: number;  
 }
+
+//esercizio 11
+
+export interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+  userId?: number;
+  metadata?: any;  
+}
