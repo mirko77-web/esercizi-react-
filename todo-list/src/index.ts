@@ -81,7 +81,7 @@ function addTodo(title: string, metadata?: any): Todo {
   todos.push(newTodo);
   return newTodo;
 }
-*/
+
 
 //esercizio 13
 
@@ -98,4 +98,22 @@ function addTodo(title: string, metadata?: string | object): Todo {
   };
   todos.push(newTodo);
   return newTodo;
+}
+
+*/
+//esercizio 14
+import { Todo } from './types';
+
+const todos: Todo[] = [];
+
+
+function updateTodo(id: number, updates: Partial<Todo>): Todo | null {
+  const todo = todos.find(t => t.id === id);
+  if (!todo) {
+    console.error(`Todo con id ${id} non trovato.`);
+    return null;
+  }
+
+  Object.assign(todo, updates);
+  return todo;
 }
