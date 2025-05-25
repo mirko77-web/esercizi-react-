@@ -42,7 +42,7 @@ function assignTodoToUser(todoId: number, userId: number): boolean {
   }
   todo.userId = userId;
   return true;
-}*/
+}
 
 //esercizio 8
 import { Todo } from './types';
@@ -52,4 +52,14 @@ const todos: Todo[] = [];
 // Funzione per ottenere tutti i Todo di un utente specifico
 function getUserTodos(userId: number): Todo[] {
   return todos.filter(todo => todo.userId === userId);
+}
+*/
+
+//esercizio 9
+import { error } from './utils';
+
+function checkValue(value: number) {
+  if (value < 0) {
+    error("Il valore non può essere negativo");
+  }
 }
