@@ -33,3 +33,16 @@ export interface Todo {
   userId?: number;
   metadata?: any;  
 }
+
+//esercizio 12
+
+export interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+  userId?: number;
+}
+
+export interface TodoWithMetadata extends Todo {
+  metadata: any;
+}
