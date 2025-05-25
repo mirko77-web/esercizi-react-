@@ -100,7 +100,7 @@ function addTodo(title: string, metadata?: string | object): Todo {
   return newTodo;
 }
 
-*/
+
 //esercizio 14
 import { Todo } from './types';
 
@@ -116,4 +116,13 @@ function updateTodo(id: number, updates: Partial<Todo>): Todo | null {
 
   Object.assign(todo, updates);
   return todo;
+}
+*/
+
+
+//esercizio 15
+import { Todo } from './types';
+
+function getTodoSummary(todo: Todo): [string, boolean] {
+  return [todo.title, todo.completed];
 }
