@@ -16,7 +16,7 @@ function addTodo(title: string): Todo {
   todos.push(newTodo);
   return newTodo;
 }
-*/
+
 //esercizio 7 
 import { Todo } from './types';
 
@@ -42,4 +42,14 @@ function assignTodoToUser(todoId: number, userId: number): boolean {
   }
   todo.userId = userId;
   return true;
+}*/
+
+//esercizio 8
+import { Todo } from './types';
+
+const todos: Todo[] = [];
+
+// Funzione per ottenere tutti i Todo di un utente specifico
+function getUserTodos(userId: number): Todo[] {
+  return todos.filter(todo => todo.userId === userId);
 }
