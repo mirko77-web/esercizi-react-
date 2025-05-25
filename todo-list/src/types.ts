@@ -46,7 +46,7 @@ export interface Todo {
 export interface TodoWithMetadata extends Todo {
   metadata: any;
 }
-*/
+
 
 
 //esercizio 13
@@ -56,4 +56,15 @@ export interface Todo {
   completed: boolean;
   userId?: number;
   metadata?: string | object;
+}
+*/
+
+//esercizio 14
+
+
+export interface User {
+  id: number;
+  name: string;
+  email?: string;
+  readonly todos: readonly Todo[];  
 }
