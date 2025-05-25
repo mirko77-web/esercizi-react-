@@ -63,7 +63,7 @@ function checkValue(value: number) {
     error("Il valore non può essere negativo");
   }
 }
-*/
+
 
 //esercizio 11
 
@@ -72,6 +72,24 @@ import { Todo } from './types';
 const todos: Todo[] = [];
 
 function addTodo(title: string, metadata?: any): Todo {
+  const newTodo: Todo = {
+    id: todos.length > 0 ? todos[todos.length - 1].id + 1 : 1,
+    title,
+    completed: false,
+    metadata
+  };
+  todos.push(newTodo);
+  return newTodo;
+}
+*/
+
+//esercizio 13
+
+import { Todo } from './types';
+
+const todos: Todo[] = [];
+
+function addTodo(title: string, metadata?: string | object): Todo {
   const newTodo: Todo = {
     id: todos.length > 0 ? todos[todos.length - 1].id + 1 : 1,
     title,

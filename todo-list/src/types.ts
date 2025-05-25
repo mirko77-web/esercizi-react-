@@ -6,7 +6,7 @@ export interface Todo {
   completed: boolean;
 }
 
-
+/*
 //esercizio 6 
 
 export interface User {
@@ -45,4 +45,15 @@ export interface Todo {
 
 export interface TodoWithMetadata extends Todo {
   metadata: any;
+}
+*/
+
+
+//esercizio 13
+export interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+  userId?: number;
+  metadata?: string | object;
 }
