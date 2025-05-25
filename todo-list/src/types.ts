@@ -1,12 +1,12 @@
 
 
-export interface Todo {
+/*export interface Todo {
   id: number;
   title: string;
   completed: boolean;
 }
 
-/*
+
 //esercizio 6 
 
 export interface User {
@@ -57,7 +57,7 @@ export interface Todo {
   userId?: number;
   metadata?: string | object;
 }
-*/
+
 
 //esercizio 14
 
@@ -67,4 +67,15 @@ export interface User {
   name: string;
   email?: string;
   readonly todos: readonly Todo[];  
+}
+*/
+
+
+//esercizio 16 
+import { User } from './types';
+import { Todo } from './types';
+
+export interface Project {
+  users: User[];
+  todos: Todo[];
 }

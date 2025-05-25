@@ -117,7 +117,6 @@ function updateTodo(id: number, updates: Partial<Todo>): Todo | null {
   Object.assign(todo, updates);
   return todo;
 }
-*/
 
 
 //esercizio 15
@@ -125,4 +124,17 @@ import { Todo } from './types';
 
 function getTodoSummary(todo: Todo): [string, boolean] {
   return [todo.title, todo.completed];
+}*/
+
+
+//esercizio 16 
+import { Project } from './types';
+import { User } from './types';
+import { Todo } from './types';
+
+function createProject(users: User[], todos: Todo[]): Project {
+  return {
+    users,
+    todos
+  };
 }
