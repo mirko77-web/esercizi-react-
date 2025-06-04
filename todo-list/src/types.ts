@@ -81,9 +81,7 @@ export interface Project {
 }*/
 
 //esercizio17
-// types.ts
 
-// types.ts
 
 // Definizione enum
 export enum TodoStatus {
@@ -99,3 +97,4 @@ export interface Todo {
   description?: string;
   status: TodoStatus;
 }
+
