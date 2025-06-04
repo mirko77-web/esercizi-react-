@@ -139,6 +139,44 @@ function createProject(users: User[], todos: Todo[]): Project {
   };
 }
 */
-//esercizio 17 
-// types.ts
 
+
+
+//esercizio 20
+
+
+import { User } from './User';
+import { Todo, TodoStatus } from './types';
+
+
+const user1 = new User(1, "Alice", "alice@example.com");
+const user2 = new User(2, "Bob");
+
+// Crea alcuni todo
+const todo1: Todo = {
+  id: 1,
+  title: "Studiare TypeScript",
+  status: TodoStatus.Pending
+};
+
+const todo2: Todo = {
+  id: 2,
+  title: "Scrivere documentazione",
+  status: TodoStatus.InProgress
+};
+
+const todo3: Todo = {
+  id: 3,
+  title: "Testare l'app",
+  status: TodoStatus.Completed
+};
+
+
+user1.addTodo(todo1);
+user1.addTodo(todo2);
+
+user2.addTodo(todo3);
+
+
+console.log(user1.todos); // Mostra i todo di Alice
+console.log(user2.todos); // Mostra i todo di Bob
