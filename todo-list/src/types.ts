@@ -113,3 +113,5 @@ export interface Todo {
 }
 
 export type PartialTodo = Partial<Todo>;
+//esrecizio23
+export type TodoRecord = Record<number, Todo>;

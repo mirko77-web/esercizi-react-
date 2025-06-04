@@ -36,3 +36,15 @@ export function filterTodos(
 ): Todo[] {
   return todos.filter(filterFn);
 }
+
+
+//esrcizio 24
+
+import { Todo, TodoRecord } from './types';
+
+export function convertArrayToRecord(todos: Todo[]): TodoRecord {
+  return todos.reduce((acc, todo) => {
+    acc[todo.id] = todo;
+    return acc;
+  }, {} as TodoRecord);
+}
