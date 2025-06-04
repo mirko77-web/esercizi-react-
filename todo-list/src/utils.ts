@@ -16,3 +16,23 @@ function parseInput(input: unknown): string {
   
   return error('Input non valido: deve essere stringa o numero');
 }
+
+
+//esrcizio 21
+
+
+
+import { Todo } from './types';
+
+/**
+ * Filtra un array di Todo in base a una funzione di filtro.
+ * @param todos Array di Todo da filtrare
+ * @param filterFn Funzione che riceve un Todo e restituisce true se va incluso
+ * @returns Array di Todo filtrati
+ */
+export function filterTodos(
+  todos: Todo[],
+  filterFn: (todo: Todo) => boolean
+): Todo[] {
+  return todos.filter(filterFn);
+}

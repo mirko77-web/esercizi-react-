@@ -26,7 +26,7 @@ function addTodo(title: string, description?: string): Todo {
   todos.push(newTodo);
   return newTodo;
 }
-*/
+
 //esercizio 19 
 // todos.ts
 
@@ -47,3 +47,16 @@ function updateTodoStatus(todoId: number, status: TodoStatus): Todo | undefined 
   return undefined;
 }
 
+*/
+//esercizio 21
+
+import { filterTodos } from './utils';
+import { TodoStatus } from './types';
+
+const todos = [
+  { id: 1, title: "Task 1", status: TodoStatus.Pending },
+  { id: 2, title: "Task 2", status: TodoStatus.Completed }
+];
+
+// Filtra i todo con status Pending
+const pending = filterTodos(todos, todo => todo.status === TodoStatus.Pending);
