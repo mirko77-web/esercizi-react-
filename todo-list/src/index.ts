@@ -124,7 +124,7 @@ import { Todo } from './types';
 
 function getTodoSummary(todo: Todo): [string, boolean] {
   return [todo.title, todo.completed];
-}*/
+}
 
 
 //esercizio 16 
@@ -138,3 +138,7 @@ function createProject(users: User[], todos: Todo[]): Project {
     todos
   };
 }
+*/
+//esercizio 17 
+// types.ts
+

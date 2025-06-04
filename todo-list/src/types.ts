@@ -68,7 +68,7 @@ export interface User {
   email?: string;
   readonly todos: readonly Todo[];  
 }
-*/
+
 
 
 //esercizio 16 
@@ -78,4 +78,24 @@ import { Todo } from './types';
 export interface Project {
   users: User[];
   todos: Todo[];
+}*/
+
+//esercizio17
+// types.ts
+
+// types.ts
+
+// Definizione enum
+export enum TodoStatus {
+  Pending = "Pending",
+  InProgress = "InProgress",
+  Completed = "Completed"
+}
+
+// Definizione interfaccia
+export interface Todo {
+  id: number;
+  title: string;
+  description?: string;
+  status: TodoStatus;
 }
