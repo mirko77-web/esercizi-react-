@@ -78,12 +78,26 @@ import { Todo } from './types';
 export interface Project {
   users: User[];
   todos: Todo[];
-}*/
+}
 
 //esercizio17
 
+export enum TodoStatus {
+  Pending = "Pending",
+  InProgress = "InProgress",
+  Completed = "Completed"
+}
 
-// Definizione enum
+// Definizione interfaccia
+export interface Todo {
+  id: number;
+  title: string;
+  description?: string;
+  status: TodoStatus;
+}
+*/
+//esercizio 22
+
 export enum TodoStatus {
   Pending = "Pending",
   InProgress = "InProgress",
@@ -98,3 +112,4 @@ export interface Todo {
   status: TodoStatus;
 }
 
+export type PartialTodo = Partial<Todo>;

@@ -47,7 +47,7 @@ function updateTodoStatus(todoId: number, status: TodoStatus): Todo | undefined 
   return undefined;
 }
 
-*/
+
 //esercizio 21
 
 import { filterTodos } from './utils';
@@ -60,3 +60,22 @@ const todos = [
 
 // Filtra i todo con status Pending
 const pending = filterTodos(todos, todo => todo.status === TodoStatus.Pending);
+*/
+
+//esercizio 22
+
+// todos.ts
+import { Todo, TodoStatus, PartialTodo } from './types';
+
+let todos: Todo[] = [
+  { id: 1, title: "Scrivere documentazione", status: TodoStatus.Pending },
+  { id: 2, title: "Fare il refactoring", status: TodoStatus.InProgress }
+];
+
+function updatePartialTodo(todoId: number, updates: PartialTodo): Todo | undefined {
+  const todo = todos.find(t => t.id === todoId);
+  if (todo) {
+    return Object.assign(todo, updates);
+  }
+  return undefined;
+}
